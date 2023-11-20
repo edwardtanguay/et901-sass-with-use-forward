@@ -1,0 +1,43 @@
+%shadow {
+	box-shadow: 8px 8px 8px yellow;
+}
+
+.ball-001 {
+	@include ball(blue, 4rem);
+	@extend %shadow;
+}
+
+.ball-002 {
+	@include ball(red, 2rem);
+	@extend %shadow;
+}
+
+.ball-003 {
+	@include ball(mix(red, yellow), 3rem);
+	@extend %shadow;
+}
+
+.ball-004 {
+	@include ball(mix(yellow, blue), 1rem);
+}
+
+$names: 'marketing', 'sales', 'dev', 'hr', 'ceo';
+$colors: purple, orchid, goldenrod, tomato, limegreen;
+
+@for $i from 1 through length($colors) {
+	.box-#{nth($names, $i)} {
+		background-color: nth($colors, $i);
+		width: 3rem;
+		height: 3rem;
+		border: 1px solid black;
+	}
+}
+
+@each $color in $colors {
+	.rectangle-#{$color} {
+		background-color: $color;
+		width: 8rem;
+		height: 3rem;
+		border: 1px solid black;
+	}
+}
