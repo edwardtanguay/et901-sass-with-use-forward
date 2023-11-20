@@ -11,7 +11,7 @@
 }
 
 .ball-002 {
-	@include mixins.ball(red, 2rem);
+	@include mixins.ball($errorColor, 2rem);
 	@extend %shadow;
 }
 
@@ -23,8 +23,6 @@
 .ball-004 {
 	@include mixins.ball(mix(yellow, blue), 1rem);
 }
-
-$names: 'marketing', 'sales', 'dev', 'hr', 'ceo';
 
 @for $i from 1 through length($colors) {
 	.box-#{nth($names, $i)} {
