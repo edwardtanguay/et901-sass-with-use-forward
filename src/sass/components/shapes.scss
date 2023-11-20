@@ -1,24 +1,26 @@
+@use '../abstracts/mixins';
+
 %shadow {
 	box-shadow: 8px 8px 8px yellow;
 }
 
 .ball-001 {
-	@include ball(blue, 4rem);
+	@include mixins.ball(blue, 4rem);
 	@extend %shadow;
 }
 
 .ball-002 {
-	@include ball(red, 2rem);
+	@include mixins.ball(red, 2rem);
 	@extend %shadow;
 }
 
 .ball-003 {
-	@include ball(mix(red, yellow), 3rem);
+	@include mixins.ball(mix(red, yellow), 3rem);
 	@extend %shadow;
 }
 
 .ball-004 {
-	@include ball(mix(yellow, blue), 1rem);
+	@include mixins.ball(mix(yellow, blue), 1rem);
 }
 
 $names: 'marketing', 'sales', 'dev', 'hr', 'ceo';
